@@ -1,0 +1,12 @@
+# Install with the Neuron package index so pip can find nki and neuronx-cc:
+#   pip install -r requirements.txt --extra-index-url https://pip.repos.neuron.amazonaws.com
+nki>=0.7
+numpy
+ml_dtypes
+torch
+safetensors
+pytest
+
+# Optional: the real Neuron compiler, for tests/test_compile.py and scripts/compile_report.py
+# (Linux x86_64 only, about 600 MB).
+# neuronx-cc

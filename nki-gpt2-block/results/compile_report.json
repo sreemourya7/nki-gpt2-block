@@ -1,0 +1,612 @@
+[
+ {
+  "target": "trn2",
+  "dtype": "float32",
+  "kernel": "layernorm_T",
+  "neff_kb": 39.6,
+  "max_rel_diff_vs_pysim": 4.977187018084805e-07,
+  "instructions": {
+   "UNKNOWN(0xd4)": 19,
+   "EVENT_SEMAPHORE": 13,
+   "TENSOR_SCALAR": 7,
+   "LDWEIGHTS": 6,
+   "MATMUL": 6,
+   "SET_ORDERING_MODE": 4,
+   "ACTIVATE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "UNKNOWN(0x24)": 1,
+   "TENSOR_REDUCE": 1,
+   "MEMSET": 1,
+   "UNKNOWN(0x92)": 1,
+   "NOP": 1,
+   "MOVE": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "float32",
+  "kernel": "linear_T (QKV, 768->2304)",
+  "neff_kb": 39.1,
+  "max_rel_diff_vs_pysim": 2.6287591481377603e-07,
+  "instructions": {
+   "LDWEIGHTS": 216,
+   "MATMUL": 216,
+   "UNKNOWN(0xd4)": 150,
+   "EVENT_SEMAPHORE": 50,
+   "ACTIVATE": 18,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "float32",
+  "kernel": "causal_attention_T (12 heads)",
+  "neff_kb": 38.6,
+  "max_rel_diff_vs_pysim": 3.7276333841873566e-07,
+  "instructions": {
+   "LDWEIGHTS": 72,
+   "MATMUL": 72,
+   "UNKNOWN(0xd4)": 48,
+   "COPY": 36,
+   "ACTIVATE": 24,
+   "EVENT_SEMAPHORE": 24,
+   "UNKNOWN(0x92)": 13,
+   "UNKNOWN(0x24)": 12,
+   "TENSOR_REDUCE": 12,
+   "TENSOR_SCALAR": 12,
+   "RECIPROCAL": 12,
+   "SET_ORDERING_MODE": 4,
+   "MOVE": 2,
+   "ACT_TABLE_LOAD": 1,
+   "MEMSET": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "float32",
+  "kernel": "linear_T (proj, 768->768)",
+  "neff_kb": 31.2,
+  "max_rel_diff_vs_pysim": 2.424619935936789e-07,
+  "instructions": {
+   "LDWEIGHTS": 72,
+   "MATMUL": 72,
+   "UNKNOWN(0xd4)": 54,
+   "EVENT_SEMAPHORE": 21,
+   "ACTIVATE": 6,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "float32",
+  "kernel": "residual_add_T",
+  "neff_kb": 7.9,
+  "max_rel_diff_vs_pysim": 0.0,
+  "instructions": {
+   "UNKNOWN(0xd4)": 18,
+   "EVENT_SEMAPHORE": 12,
+   "LDWEIGHTS": 6,
+   "MATMUL": 6,
+   "TENSOR_TENSOR": 6,
+   "SET_ORDERING_MODE": 3,
+   "MEMSET": 1,
+   "UNKNOWN(0x92)": 1,
+   "NOP": 1,
+   "MOVE": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "float32",
+  "kernel": "mlp_T (768->3072->768)",
+  "neff_kb": 56.8,
+  "max_rel_diff_vs_pysim": 6.083161565584305e-07,
+  "instructions": {
+   "LDWEIGHTS": 576,
+   "MATMUL": 576,
+   "UNKNOWN(0xd4)": 330,
+   "EVENT_SEMAPHORE": 90,
+   "ACTIVATE": 30,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "float32",
+  "kernel": "  unfused: linear_gelu_T (768->3072)",
+  "neff_kb": 44.7,
+  "max_rel_diff_vs_pysim": 2.393826889601769e-06,
+  "instructions": {
+   "LDWEIGHTS": 288,
+   "MATMUL": 288,
+   "UNKNOWN(0xd4)": 198,
+   "EVENT_SEMAPHORE": 63,
+   "ACTIVATE": 24,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "float32",
+  "kernel": "  unfused: linear_T (3072->768)",
+  "neff_kb": 40.8,
+  "max_rel_diff_vs_pysim": 2.5610916054574773e-07,
+  "instructions": {
+   "LDWEIGHTS": 288,
+   "MATMUL": 288,
+   "UNKNOWN(0xd4)": 180,
+   "EVENT_SEMAPHORE": 39,
+   "ACTIVATE": 6,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "bfloat16",
+  "kernel": "layernorm_T",
+  "neff_kb": 39.6,
+  "max_rel_diff_vs_pysim": 0.0016339869471266866,
+  "instructions": {
+   "UNKNOWN(0xd4)": 19,
+   "EVENT_SEMAPHORE": 13,
+   "TENSOR_SCALAR": 7,
+   "LDWEIGHTS": 6,
+   "MATMUL": 6,
+   "SET_ORDERING_MODE": 4,
+   "ACTIVATE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "UNKNOWN(0x24)": 1,
+   "TENSOR_REDUCE": 1,
+   "MEMSET": 1,
+   "UNKNOWN(0x92)": 1,
+   "NOP": 1,
+   "MOVE": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "bfloat16",
+  "kernel": "linear_T (QKV, 768->2304)",
+  "neff_kb": 37.8,
+  "max_rel_diff_vs_pysim": 2.9818702387274243e-05,
+  "instructions": {
+   "UNKNOWN(0xd4)": 150,
+   "LDWEIGHTS": 108,
+   "MATMUL": 108,
+   "EVENT_SEMAPHORE": 50,
+   "ACTIVATE": 18,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "bfloat16",
+  "kernel": "causal_attention_T (12 heads)",
+  "neff_kb": 38.3,
+  "max_rel_diff_vs_pysim": 0.0005813953466713428,
+  "instructions": {
+   "MATMUL": 48,
+   "UNKNOWN(0xd4)": 48,
+   "LDWEIGHTS": 48,
+   "ACTIVATE": 24,
+   "CAST": 24,
+   "EVENT_SEMAPHORE": 24,
+   "UNKNOWN(0x92)": 14,
+   "UNKNOWN(0x24)": 12,
+   "TENSOR_REDUCE": 12,
+   "TENSOR_SCALAR": 12,
+   "COPY": 12,
+   "RECIPROCAL": 12,
+   "SET_ORDERING_MODE": 4,
+   "MEMSET": 2,
+   "MOVE": 2,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "bfloat16",
+  "kernel": "linear_T (proj, 768->768)",
+  "neff_kb": 30.8,
+  "max_rel_diff_vs_pysim": 7.75049647927517e-06,
+  "instructions": {
+   "UNKNOWN(0xd4)": 54,
+   "LDWEIGHTS": 36,
+   "MATMUL": 36,
+   "EVENT_SEMAPHORE": 21,
+   "ACTIVATE": 6,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "bfloat16",
+  "kernel": "residual_add_T",
+  "neff_kb": 7.9,
+  "max_rel_diff_vs_pysim": 0.0,
+  "instructions": {
+   "UNKNOWN(0xd4)": 18,
+   "EVENT_SEMAPHORE": 12,
+   "LDWEIGHTS": 6,
+   "MATMUL": 6,
+   "TENSOR_TENSOR": 6,
+   "SET_ORDERING_MODE": 3,
+   "MEMSET": 1,
+   "UNKNOWN(0x92)": 1,
+   "NOP": 1,
+   "MOVE": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "bfloat16",
+  "kernel": "mlp_T (768->3072->768)",
+  "neff_kb": 52.8,
+  "max_rel_diff_vs_pysim": 0.00012450199574232101,
+  "instructions": {
+   "UNKNOWN(0xd4)": 330,
+   "LDWEIGHTS": 288,
+   "MATMUL": 288,
+   "EVENT_SEMAPHORE": 69,
+   "ACTIVATE": 30,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "bfloat16",
+  "kernel": "  unfused: linear_gelu_T (768->3072)",
+  "neff_kb": 43.1,
+  "max_rel_diff_vs_pysim": 0.0009803922148421407,
+  "instructions": {
+   "UNKNOWN(0xd4)": 198,
+   "LDWEIGHTS": 144,
+   "MATMUL": 144,
+   "EVENT_SEMAPHORE": 63,
+   "ACTIVATE": 24,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn2",
+  "dtype": "bfloat16",
+  "kernel": "  unfused: linear_T (3072->768)",
+  "neff_kb": 39.4,
+  "max_rel_diff_vs_pysim": 2.3475060970667982e-06,
+  "instructions": {
+   "UNKNOWN(0xd4)": 180,
+   "LDWEIGHTS": 144,
+   "MATMUL": 144,
+   "EVENT_SEMAPHORE": 39,
+   "ACTIVATE": 6,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "float32",
+  "kernel": "layernorm_T",
+  "neff_kb": 40.9,
+  "max_rel_diff_vs_pysim": 4.977187018084805e-07,
+  "instructions": {
+   "UNKNOWN(0xd4)": 19,
+   "EVENT_SEMAPHORE": 13,
+   "TENSOR_SCALAR": 7,
+   "LDWEIGHTS": 6,
+   "MATMUL": 6,
+   "SET_ORDERING_MODE": 4,
+   "ACTIVATE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "UNKNOWN(0x24)": 1,
+   "TENSOR_REDUCE": 1,
+   "MEMSET": 1,
+   "UNKNOWN(0x92)": 1,
+   "NOP": 1,
+   "MOVE": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "float32",
+  "kernel": "linear_T (QKV, 768->2304)",
+  "neff_kb": 39.2,
+  "max_rel_diff_vs_pysim": 2.6287591481377603e-07,
+  "instructions": {
+   "LDWEIGHTS": 216,
+   "MATMUL": 216,
+   "UNKNOWN(0xd4)": 150,
+   "EVENT_SEMAPHORE": 50,
+   "ACTIVATE": 18,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "float32",
+  "kernel": "causal_attention_T (12 heads)",
+  "neff_kb": 39.8,
+  "max_rel_diff_vs_pysim": 3.7276333841873566e-07,
+  "instructions": {
+   "LDWEIGHTS": 72,
+   "MATMUL": 72,
+   "UNKNOWN(0xd4)": 48,
+   "COPY": 36,
+   "ACTIVATE": 24,
+   "EVENT_SEMAPHORE": 22,
+   "UNKNOWN(0x92)": 13,
+   "UNKNOWN(0x24)": 12,
+   "TENSOR_REDUCE": 12,
+   "TENSOR_SCALAR": 12,
+   "RECIPROCAL": 12,
+   "SET_ORDERING_MODE": 4,
+   "MOVE": 2,
+   "ACT_TABLE_LOAD": 1,
+   "MEMSET": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "float32",
+  "kernel": "linear_T (proj, 768->768)",
+  "neff_kb": 31.2,
+  "max_rel_diff_vs_pysim": 2.424619935936789e-07,
+  "instructions": {
+   "LDWEIGHTS": 72,
+   "MATMUL": 72,
+   "UNKNOWN(0xd4)": 54,
+   "EVENT_SEMAPHORE": 21,
+   "ACTIVATE": 6,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "float32",
+  "kernel": "residual_add_T",
+  "neff_kb": 9.2,
+  "max_rel_diff_vs_pysim": 0.0,
+  "instructions": {
+   "UNKNOWN(0xd4)": 18,
+   "EVENT_SEMAPHORE": 12,
+   "LDWEIGHTS": 6,
+   "MATMUL": 6,
+   "TENSOR_TENSOR": 6,
+   "SET_ORDERING_MODE": 3,
+   "MEMSET": 1,
+   "UNKNOWN(0x92)": 1,
+   "NOP": 1,
+   "MOVE": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "float32",
+  "kernel": "mlp_T (768->3072->768)",
+  "neff_kb": 56.7,
+  "max_rel_diff_vs_pysim": 6.083161565584305e-07,
+  "instructions": {
+   "LDWEIGHTS": 576,
+   "MATMUL": 576,
+   "UNKNOWN(0xd4)": 330,
+   "EVENT_SEMAPHORE": 93,
+   "ACTIVATE": 30,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "float32",
+  "kernel": "  unfused: linear_gelu_T (768->3072)",
+  "neff_kb": 44.7,
+  "max_rel_diff_vs_pysim": 2.393826889601769e-06,
+  "instructions": {
+   "LDWEIGHTS": 288,
+   "MATMUL": 288,
+   "UNKNOWN(0xd4)": 198,
+   "EVENT_SEMAPHORE": 62,
+   "ACTIVATE": 24,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "float32",
+  "kernel": "  unfused: linear_T (3072->768)",
+  "neff_kb": 40.9,
+  "max_rel_diff_vs_pysim": 2.5610916054574773e-07,
+  "instructions": {
+   "LDWEIGHTS": 288,
+   "MATMUL": 288,
+   "UNKNOWN(0xd4)": 180,
+   "EVENT_SEMAPHORE": 39,
+   "ACTIVATE": 6,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "bfloat16",
+  "kernel": "layernorm_T",
+  "neff_kb": 41.0,
+  "max_rel_diff_vs_pysim": 0.0016339869471266866,
+  "instructions": {
+   "UNKNOWN(0xd4)": 19,
+   "EVENT_SEMAPHORE": 13,
+   "TENSOR_SCALAR": 7,
+   "LDWEIGHTS": 6,
+   "MATMUL": 6,
+   "SET_ORDERING_MODE": 4,
+   "ACTIVATE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "UNKNOWN(0x24)": 1,
+   "TENSOR_REDUCE": 1,
+   "MEMSET": 1,
+   "UNKNOWN(0x92)": 1,
+   "NOP": 1,
+   "MOVE": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "bfloat16",
+  "kernel": "linear_T (QKV, 768->2304)",
+  "neff_kb": 37.8,
+  "max_rel_diff_vs_pysim": 2.9818702387274243e-05,
+  "instructions": {
+   "UNKNOWN(0xd4)": 150,
+   "LDWEIGHTS": 108,
+   "MATMUL": 108,
+   "EVENT_SEMAPHORE": 50,
+   "ACTIVATE": 18,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "bfloat16",
+  "kernel": "causal_attention_T (12 heads)",
+  "neff_kb": 39.7,
+  "max_rel_diff_vs_pysim": 0.0005813953466713428,
+  "instructions": {
+   "MATMUL": 48,
+   "UNKNOWN(0xd4)": 48,
+   "LDWEIGHTS": 48,
+   "ACTIVATE": 24,
+   "CAST": 24,
+   "EVENT_SEMAPHORE": 24,
+   "UNKNOWN(0x92)": 14,
+   "UNKNOWN(0x24)": 12,
+   "TENSOR_REDUCE": 12,
+   "TENSOR_SCALAR": 12,
+   "COPY": 12,
+   "RECIPROCAL": 12,
+   "SET_ORDERING_MODE": 4,
+   "MEMSET": 2,
+   "MOVE": 2,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "bfloat16",
+  "kernel": "linear_T (proj, 768->768)",
+  "neff_kb": 30.8,
+  "max_rel_diff_vs_pysim": 7.75049647927517e-06,
+  "instructions": {
+   "UNKNOWN(0xd4)": 54,
+   "LDWEIGHTS": 36,
+   "MATMUL": 36,
+   "EVENT_SEMAPHORE": 21,
+   "ACTIVATE": 6,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "bfloat16",
+  "kernel": "residual_add_T",
+  "neff_kb": 9.3,
+  "max_rel_diff_vs_pysim": 0.0,
+  "instructions": {
+   "UNKNOWN(0xd4)": 18,
+   "EVENT_SEMAPHORE": 12,
+   "LDWEIGHTS": 6,
+   "MATMUL": 6,
+   "TENSOR_TENSOR": 6,
+   "SET_ORDERING_MODE": 3,
+   "MEMSET": 1,
+   "UNKNOWN(0x92)": 1,
+   "NOP": 1,
+   "MOVE": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "bfloat16",
+  "kernel": "mlp_T (768->3072->768)",
+  "neff_kb": 52.8,
+  "max_rel_diff_vs_pysim": 0.00012450199574232101,
+  "instructions": {
+   "UNKNOWN(0xd4)": 330,
+   "LDWEIGHTS": 288,
+   "MATMUL": 288,
+   "EVENT_SEMAPHORE": 69,
+   "ACTIVATE": 30,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "bfloat16",
+  "kernel": "  unfused: linear_gelu_T (768->3072)",
+  "neff_kb": 43.1,
+  "max_rel_diff_vs_pysim": 0.0009803922148421407,
+  "instructions": {
+   "UNKNOWN(0xd4)": 198,
+   "LDWEIGHTS": 144,
+   "MATMUL": 144,
+   "EVENT_SEMAPHORE": 62,
+   "ACTIVATE": 24,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ },
+ {
+  "target": "trn3",
+  "dtype": "bfloat16",
+  "kernel": "  unfused: linear_T (3072->768)",
+  "neff_kb": 39.3,
+  "max_rel_diff_vs_pysim": 2.3475060970667982e-06,
+  "instructions": {
+   "UNKNOWN(0xd4)": 180,
+   "LDWEIGHTS": 144,
+   "MATMUL": 144,
+   "EVENT_SEMAPHORE": 39,
+   "ACTIVATE": 6,
+   "SET_ORDERING_MODE": 3,
+   "ACT_TABLE_LOAD": 1,
+   "NOP": 1
+  }
+ }
+]

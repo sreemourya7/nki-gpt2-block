@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nki-gpt2-block"
+version = "0.1.0"
+description = "A GPT-2 decoder block on hand-written NKI kernels for AWS Trainium, validated on simulators"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+    "numpy",
+    "ml_dtypes",
+    "torch",
+    "safetensors",
+    # nki (and optionally neuronx-cc) come from the Neuron package index, see README.
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]
+markers = [
+    "neuronxcc: compiles kernels with the real Neuron compiler (needs the neuronx-cc package)",
+    "gpt2: needs the GPT-2 weights (run scripts/download_gpt2.py first)",
+]
+filterwarnings = ["ignore::FutureWarning", "ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
